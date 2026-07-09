@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 interface Photo {
@@ -13,7 +12,6 @@ interface Photo {
   location: string; 
 }
 
-// Colecția premium: Portrete umane expresive și natură grandioasă
 const PORTFOLIO_PHOTOS: Photo[] = [
   { id: '1', src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb', title: 'Cinematic Portrait / Golden Hour', category: 'PORTRAIT', lens: '85mm f/1.4 Portrait Pro', location: 'Studio Outdoor' },
   { id: '2', src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', title: 'The Endless Horizon', category: 'NATURE', lens: '24mm f/2.8 Ultra-Wide', location: 'Maldives Coast' },
@@ -68,14 +66,14 @@ export default function Home() {
         </p>
         <h2 className="text-3xl md:text-5xl font-extralight tracking-tight text-white mb-6 leading-snug">
           Oameni, natură și povești nespuse. <br/>
-          <span className="font-serif italic text-zinc-400 font-normal">Surprinderea emoției în starea ei cea mai pură.</span>
+          <span className="font-serif italic text-zinc-400 font-normal">Surprinderea emoției în starea ei sei mai pură.</span>
         </h2>
         <p className="text-xs text-zinc-400 max-w-lg mx-auto font-light leading-relaxed">
-          De la portrete de modă și expresii umane profunde, până la peisaje naturale uluitoare lăsate să respire în cadre largi. Calitate premium dedicată exclusiv revistelor și expozițiilor.
+          De la portrete de modă și expresii umane profunde, până la peisaje naturale uluitoare lăsate să respire în cadre largi.
         </p>
       </section>
 
-      {/* Filtre Categorii Curate */}
+      {/* Filtre Categorii */}
       <div className="flex justify-center flex-wrap gap-2 md:gap-3 font-mono text-[10px] mb-16 px-4 tracking-widest uppercase">
         {['ALL', 'PORTRAIT', 'NATURE'].map((filter) => (
           <button
@@ -87,71 +85,82 @@ export default function Home() {
                 : 'bg-zinc-900/40 border border-zinc-900 text-zinc-400 hover:text-white hover:border-zinc-700'
             }`}
           >
-            {filter === 'ALL' ? 'TOATE CADRELE' : filter === 'PORTRAIT' ? 'PORTRETE / OAMENI' : 'NATURĂ / PEISAJE'}
+            {filter === 'ALL' ? 'TOATE CADRELE' : filter === 'PORTRAIT' ? 'PORTRETE' : 'NATURĂ'}
           </button>
         ))}
       </div>
 
-      {/* Portofoliu Grid Masiv - Modificat pentru imagini MICI, simetrice și centrate */}
+      {/* Grid Fixat - Imagini Mici */}
       <section className="max-w-7xl mx-auto px-4 pb-32">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gap: '24px',
+          justifyItems: 'center'
+        }}>
           {filteredPhotos.map((photo) => (
             <div
               key={photo.id}
-              className="group relative overflow-hidden rounded-lg bg-zinc-950 border border-zinc-900/40 cursor-pointer w-full max-w-[320px] h-[380px] transition-all duration-700 hover:border-zinc-600"
+              className="group relative overflow-hidden rounded-lg bg-zinc-950 border border-zinc-900/40 cursor-pointer"
+              style={{
+                width: '100%',
+                maxWidth: '280px',
+                height: '350px'
+              }}
               onClick={() => setSelectedPhoto(photo)}
             >
-              <Image
+              {/* Am înlocuit componenta Next Image cu tagul img nativ și CSS Inline */}
+              <img
                 src={photo.src}
                 alt={photo.title}
-                fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-102 grayscale group-hover:grayscale-0 contrast-[1.05]"
-                unoptimized
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                }}
+                className="transition-transform duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0"
               />
               
-              {/* Overlay de Control (Apare la hover) */}
+              {/* Overlay la hover */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-4">
-                <div className="flex items-center justify-between border-b border-zinc-800 pb-2 mb-2">
+                <div className="flex items-center justify-between border-b border-zinc-800 pb-1 mb-1">
                   <span className="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">{photo.category}</span>
                   <span className="text-[9px] font-mono text-zinc-400">{photo.location}</span>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-xs font-light text-white tracking-wide">{photo.title}</h3>
-                  <span className="text-[9px] font-mono text-zinc-500 italic">{photo.lens}</span>
-                </div>
+                <h3 className="text-xs font-light text-white tracking-wide">{photo.title}</h3>
+                <span className="text-[9px] font-mono text-zinc-500 italic mt-0.5">{photo.lens}</span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Buton Contact */}
         <div className="text-center mt-24">
           <Link href="/contact" className="inline-block font-mono text-xs tracking-widest border border-zinc-800 hover:border-white px-8 py-4 rounded-none uppercase text-zinc-400 hover:text-white transition-all duration-300">
-            DISCUTĂ O SESIUNE FOTO / REZERVĂRI FORMULAR →
+            DISCUTĂ O SESIUNE FOTO →
           </Link>
         </div>
       </section>
 
-      {/* Lightbox Minimalist - Mod Full Screen de Galerie */}
+      {/* Lightbox Mod Full Screen */}
       {selectedPhoto && (
         <div 
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/98" 
           onClick={() => setSelectedPhoto(null)}
         >
-          {/* Top Bar Lightbox */}
           <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center font-mono text-[10px] text-zinc-500">
             <span>{selectedPhoto.location.toUpperCase()} // OPTICS: {selectedPhoto.lens.toUpperCase()}</span>
-            <button className="text-zinc-400 hover:text-white tracking-widest uppercase">
-              [ ÎNCHIDE ]
-            </button>
+            <button className="text-zinc-400 hover:text-white tracking-widest uppercase">[ ÎNCHIDE ]</button>
           </div>
 
-          {/* Zona Imagine */}
-          <div className="relative w-[92vw] h-[78vh] max-w-6xl mt-6" onClick={(e) => e.stopPropagation()}>
-            <Image src={selectedPhoto.src} alt={selectedPhoto.title} fill className="object-contain" unoptimized />
+          <div className="relative w-[92vw] h-[7vh] max-w-4xl mt-6" onClick={(e) => e.stopPropagation()}>
+            <img 
+              src={selectedPhoto.src} 
+              alt={selectedPhoto.title} 
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+            />
           </div>
 
-          {/* Bottom Bar Lightbox */}
           <div className="absolute bottom-0 left-0 right-0 p-6 font-mono text-xs text-center flex flex-col sm:flex-row justify-between items-center max-w-7xl mx-auto w-full text-zinc-400 gap-2">
             <span className="text-white font-light tracking-wide">{selectedPhoto.title}</span>
             <span className="text-zinc-500 text-[10px]">FINE ART COLLECTION // © 2026</span>
@@ -159,10 +168,8 @@ export default function Home() {
         </div>
       )}
 
-      {/* Footer */}
       <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-zinc-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-zinc-500 font-mono tracking-wider">
         <div>&copy; 2026 ALEXANDRU PHOTOGRAPHY. ALL RIGHTS RESERVED.</div>
-        <div>HIGH RESOLUTION PORTFOLIO BUFFER</div>
       </footer>
     </main>
   );
