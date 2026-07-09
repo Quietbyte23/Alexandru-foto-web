@@ -50,13 +50,13 @@ export default function Prices() {
         </div>
       </header>
 
-      {/* TITLU PAGINĂ */}
+      {/* TITLU */}
       <section style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', padding: '80px 24px 40px 24px' }}>
         <p style={{ fontSize: '10px', fontFamily: 'monospace', letterSpacing: '4px', color: '#a1a1aa', margin: '0 0 16px 0', textTransform: 'uppercase' }}>
-          INVESTIȚIE // COOPERARE ARTISTICĂ
+          INVESTIȚIE // STRUCTURĂ CADRE 2026
         </p>
         <h2 style={{ fontSize: '36px', fontWeight: 200, letterSpacing: '-0.5px', margin: '0 0 16px 0', color: '#ffffff' }}>
-          Servicii & Tarife <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: '#a1a1aa' }}>2026</span>
+          Servicii & Tarife <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: '#a1a1aa' }}>In RON</span>
         </h2>
       </section>
 
@@ -69,57 +69,57 @@ export default function Prices() {
         }}>
           
           {/* PACHET 1 */}
-          <div style={{ padding: '40px 30px', backgroundColor: '#09090b', border: '1px solid #18181b', display: 'flex', flexDirection: 'column', justifyItems: 'space-between' }}>
+          <div style={{ padding: '40px 30px', backgroundColor: '#09090b', border: '1px solid #18181b', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
-              <p style={{ fontFamily: 'monospace', fontSize: '10px', color: '#71717a', margin: '0 0 10px 0' }}>01 // ESSENTIAL</p>
-              <h3 style={{ fontSize: '20px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff' }}>Portret Editorial</h3>
-              <p style={{ fontSize: '24px', fontWeight: 300, color: '#f4f4f5', margin: '0 0 30px 0' }}>250 €</p>
+              <p style={{ fontFamily: 'monospace', fontSize: '10px', color: '#71717a', margin: '0 0 10px 0' }}>// SYS.01_ESSENTIAL</p>
+              <h3 style={{ fontSize: '20px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff' }}>Portret Urban / Editorial</h3>
+              <p style={{ fontSize: '24px', fontWeight: 300, color: '#ffffff', margin: '0 0 30px 0' }}>1.250 RON</p>
               <ul style={{ paddingLeft: '0', listStyle: 'none', fontSize: '13px', color: '#a1a1aa', lineHeight: '2.2', margin: '0 0 40px 0' }}>
-                <li>• 1.5 ore sesiune foto (Studio / Outdoor)</li>
-                <li>• 15 fotografii editate profesional fin</li>
-                <li>• Consultanță stilistică și moodboard</li>
-                <li>• Livrare privată în galerie digitală (14 zile)</li>
+                <li>• 1.5 ore sesiune foto (focalizare pe expresie)</li>
+                <li>• 15 cadre editate în detaliu high-end</li>
+                <li>• Moodboard digital personalizat</li>
+                <li>• Galerie privată securizată pentru download</li>
               </ul>
             </div>
             <Link href="/contact" style={{ display: 'block', textAlign: 'center', backgroundColor: 'transparent', border: '1px solid #27272a', padding: '12px 0', fontSize: '11px', fontFamily: 'monospace', color: '#ffffff', textDecoration: 'none', letterSpacing: '1px' }}>
-              REZERVĂ ACUM
+              INIȚIAZĂ REZERVARE
             </Link>
           </div>
 
           {/* PACHET 2 */}
-          <div style={{ padding: '40px 30px', backgroundColor: '#0c0c0e', border: '1px solid #f4f4f5', display: 'flex', flexDirection: 'column', justifyItems: 'space-between', position: 'relative' }}>
-            <span style={{ position: 'absolute', top: '15px', right: '20px', fontFamily: 'monospace', fontSize: '8px', color: '#ffffff', border: '1px solid #ffffff', padding: '2px 6px' }}>RECOMMENDED</span>
+          <div style={{ padding: '40px 30px', backgroundColor: '#0c0c0e', border: '1px solid #ffffff', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
+            <span style={{ position: 'absolute', top: '15px', right: '20px', fontFamily: 'monospace', fontSize: '8px', color: '#ffffff', border: '1px solid #ffffff', padding: '2px 6px' }}>RECOMANDAT</span>
             <div>
-              <p style={{ fontFamily: 'monospace', fontSize: '10px', color: '#a1a1aa', margin: '0 0 10px 0' }}>02 // PREMIUM</p>
-              <h3 style={{ fontSize: '20px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff' }}>Fashion & Lookbook</h3>
-              <p style={{ fontSize: '24px', fontWeight: 300, color: '#f4f4f5', margin: '0 0 30px 0' }}>450 €</p>
+              <p style={{ fontFamily: 'monospace', fontSize: '10px', color: '#a1a1aa', margin: '0 0 10px 0' }}>// SYS.02_PREMIUM</p>
+              <h3 style={{ fontSize: '20px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff' }}>Fashion & Cyberpunk Lookbook</h3>
+              <p style={{ fontSize: '24px', fontWeight: 300, color: '#ffffff', margin: '0 0 30px 0' }}>2.200 RON</p>
               <ul style={{ paddingLeft: '0', listStyle: 'none', fontSize: '13px', color: '#a1a1aa', lineHeight: '2.2', margin: '0 0 40px 0' }}>
-                <li>• 3 ore sesiune foto (Locații multiple)</li>
-                <li>• 35 fotografii procesate high-end retail</li>
-                <li>• Schimbări nelimitate de ținute</li>
-                <li>• Drepturi comerciale de utilizare incluse</li>
+                <li>• 3 ore sesiune foto (Locații urbane / geometrice)</li>
+                <li>• 35 fotografii procesate colorizare avansată</li>
+                <li>• Schimbări de ținute și texturi controlate</li>
+                <li>• Drepturi de utilizare portofoliu / comercial</li>
               </ul>
             </div>
             <Link href="/contact" style={{ display: 'block', textAlign: 'center', backgroundColor: '#ffffff', border: '1px solid #ffffff', padding: '12px 0', fontSize: '11px', fontFamily: 'monospace', color: '#000000', textDecoration: 'none', fontWeight: 600, letterSpacing: '1px' }}>
-              REZERVĂ ACUM
+              SECURIZEAZĂ SLOTUL
             </Link>
           </div>
 
           {/* PACHET 3 */}
-          <div style={{ padding: '40px 30px', backgroundColor: '#09090b', border: '1px solid #18181b', display: 'flex', flexDirection: 'column', justifyItems: 'space-between' }}>
+          <div style={{ padding: '40px 30px', backgroundColor: '#09090b', border: '1px solid #18181b', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
-              <p style={{ fontFamily: 'monospace', fontSize: '10px', color: '#71717a', margin: '0 0 10px 0' }}>03 // CUSTOM</p>
-              <h3 style={{ fontSize: '20px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff' }}>Peisaj & Comercial</h3>
-              <p style={{ fontSize: '24px', fontWeight: 300, color: '#f4f4f5', margin: '0 0 30px 0' }}>De la 600 €</p>
+              <p style={{ fontFamily: 'monospace', fontSize: '10px', color: '#71717a', margin: '0 0 10px 0' }}>// SYS.03_CUSTOM</p>
+              <h3 style={{ fontSize: '20px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff' }}>Natură / Proiect Comercial</h3>
+              <p style={{ fontSize: '24px', fontWeight: 300, color: '#ffffff', margin: '0 0 30px 0' }}>De la 3.000 RON</p>
               <ul style={{ paddingLeft: '0', listStyle: 'none', fontSize: '13px', color: '#a1a1aa', lineHeight: '2.2', margin: '0 0 40px 0' }}>
-                <li>• Proiecte personalizate de brand / turism</li>
-                <li>• Licențiere exclusivă imagini rezoluție mare</li>
-                <li>• Editare avansată pentru printuri mari</li>
-                <li>• Deplasări internaționale la cerere</li>
+                <li>• Proiecte concept (peisaje, geometrie naturală)</li>
+                <li>• Rezoluție ultra-înaltă optimizată pentru print</li>
+                <li>• Consultanță tehnică completă echipament</li>
+                <li>• Deplasări specifice în țară / exterior</li>
               </ul>
             </div>
             <Link href="/contact" style={{ display: 'block', textAlign: 'center', backgroundColor: 'transparent', border: '1px solid #27272a', padding: '12px 0', fontSize: '11px', fontFamily: 'monospace', color: '#ffffff', textDecoration: 'none', letterSpacing: '1px' }}>
-              SOLICITĂ OFERTĂ
+              SOLICITĂ FORMULAR CUSTOM
             </Link>
           </div>
 
