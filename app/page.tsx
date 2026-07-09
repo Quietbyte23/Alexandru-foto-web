@@ -1,5 +1,4 @@
 export default function Home() {
-  // Pune aici numele exact al pozei tale din folderul public (ex: "/nume.jpg")
   const srcPoza = "/numele_pozei_tale.jpg"; 
 
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       fontFamily: "sans-serif"
     }}>
       
-      {/* Containerul imaginii */}
       <div style={{
         flex: 1,
         position: "relative",
@@ -35,7 +33,6 @@ export default function Home() {
         />
       </div>
 
-      {/* Bara de jos cu textul */}
       <div style={{
         backgroundColor: "black",
         padding: "20px 30px",
@@ -77,4 +74,3 @@ export default function Home() {
     </main>
   );
 }
-
