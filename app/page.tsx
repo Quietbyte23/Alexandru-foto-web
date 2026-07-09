@@ -69,14 +69,9 @@ export default function Home() {
           alignItems: 'center'
         }}>
           <div>
-            <h1 style={{ fontSize: '14px', fontWeight: 600, tracking: '0.2em', letterSpacing: '2px', margin: 0, color: '#ffffff' }}>
-              ALEXANDRU <span style={{ color: '#71717a', fontWeight: 300 }}>| PHOTOGRAPHY</span>
-            </h1>
-            <p style={{ fontSize: '9px', color: '#52525b', fontFamily: 'monospace', margin: '2px 0 0 0', letterSpacing: '1px' }}>
-              PORTRAIT & LANDSCAPE ARTISTRY
-            </p>
-          </div>
-
+            <h1 style={{ fontSize: '14px', fontWeight: 600, letterSpacing: '2px', margin: 0, color: '#ffffff' }}>
+  ALEXANDRU <span style={{ color: '#71717a', fontWeight: 300 }}>| PHOTOGRAPHY</span>
+</h1>
           <nav style={{ display: 'flex', gap: '30px', fontFamily: 'monospace', fontSize: '12px', letterSpacing: '1px' }}>
             <Link href="/" style={{ color: '#ffffff', textDecoration: 'none', borderBottom: '1px solid #ffffff', paddingBottom: '4px' }}>
               PORTOFOLIU
