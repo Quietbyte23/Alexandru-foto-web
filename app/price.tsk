@@ -1,0 +1,135 @@
+'use client';
+
+import Link from 'next/link';
+
+interface Plan {
+  code: string;
+  name: string;
+  price: string;
+  scope: string;
+  specs: string[];
+  highlight?: boolean;
+}
+
+const PLANS: Plan[] = [
+  {
+    code: "PKG_01",
+    name: "CYBERPUNK STREETS",
+    price: "180€",
+    scope: "Sesiuni nocturne, lumini de neon, arhitectură brutalistă sau auto.",
+    specs: ["90 de minute shooting", "20 imagini editate la rezoluție maximă", "Color grading stil cinematografic", "Livrare securizată prin Cloud în 3 zile"]
+  },
+  {
+    code: "PKG_02",
+    name: "ENGINEERING & BRAND",
+    price: "400€",
+    scope: "Portofoliu industrial, design de produs, arhitectură premium sau tech.",
+    specs: ["3 ore sesiune dedicată", "40 imagini masterizate complet", "Licență comercială nelimitată inclusă", "Optimizare specială pentru Web/Retina UI"],
+    highlight: true
+  },
+  {
+    code: "PKG_03",
+    name: "CUSTOM ARCHIVE",
+    price: "750€+",
+    scope: "Proiecte artistice complexe, acoperire completă evenimente nișate.",
+    specs: ["Timp flexibil (Full Day)", "Toate cadrele brute livrate + 60 selectate", "Suport tehnic post-procesare", "NDA (Acord confidențialitate) disponibil"]
+  }
+];
+
+export default function Prices() {
+  return (
+    <main className="min-h-screen bg-[#050507] text-zinc-100 selection:bg-sky-400 selection:text-black p-4">
+      {/* Header */}
+      <header className="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 border-b border-zinc-900">
+        <div>
+          <h1 className="text-lg font-bold tracking-widest uppercase font-mono">
+            ALX <span className="text-sky-400">//</span> VISUALS
+          </h1>
+          <p className="text-[10px] text-zinc-500 font-mono mt-0.5">quietb1te_engine_v2.6</p>
+        </div>
+
+        <nav className="flex items-center gap-8 font-mono text-xs tracking-wider">
+          <Link href="/" className="text-zinc-500 hover:text-zinc-200 transition-colors pb-1">/archive</Link>
+          <Link href="/prices" className="text-sky-400 border-b border-sky-400 pb-1">/rates</Link>
+        </nav>
+        
+        <div className="flex items-center gap-2 bg-zinc-950 border border-zinc-900 px-3 py-1 rounded-full text-[10px] font-mono">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="text-zinc-450 tracking-tight">RATES // LIVE</span>
+        </div>
+      </header>
+
+      {/* Hero Prețuri */}
+      <section className="max-w-3xl mx-auto text-center pt-20 pb-16 px-4">
+        <p className="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">// PRICING ARCHITECTURE</p>
+        <h2 className="text-3xl font-light tracking-tight text-zinc-200">
+          Tarife corecte, calculate pe baza calității tehnice brute.
+        </h2>
+      </section>
+
+      {/* Cardurile Tehnice */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {PLANS.map((plan, i) => (
+            <div 
+              key={i}
+              className={`bg-[#0a0a0d] border rounded-lg p-6 flex flex-col justify-between transition-all duration-300 ${
+                plan.highlight ? 'border-sky-500/60 shadow-[0_0_30px_rgba(56,189,248,0.03)]' : 'border-zinc-900'
+              }`}
+            >
+              <div>
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-[10px] font-mono text-zinc-500 bg-zinc-900 px-2 py-0.5 rounded">{plan.code}</span>
+                  {plan.highlight && <span className="text-[9px] font-mono text-sky-400 tracking-widest border border-sky-500/30 px-2 py-0.5 rounded-full">RECOMMENDED</span>}
+                </div>
+
+                <h3 className="text-lg font-semibold text-white tracking-wide mb-2 font-mono">{plan.name}</h3>
+                <p className="text-xs text-zinc-400 font-light leading-relaxed mb-6 h-10">{plan.scope}</p>
+
+                <div className="text-3xl font-light tracking-tight text-white font-mono mb-6">{plan.price}</div>
+                
+                <div className="border-t border-zinc-900 my-4" />
+
+                <ul className="space-y-3 mb-8">
+                  {plan.specs.map((spec, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 text-xs text-zinc-400 font-mono">
+                      <span className="text-sky-400/70 text-[10px] mt-0.5">■</span>
+                      <span>{spec}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <a 
+                href={`mailto:alex@yourdomain.com?subject=Inquiry: ${plan.name}`}
+                className={`w-full py-3 text-center rounded text-xs font-mono tracking-widest uppercase transition-all duration-300 ${
+                  plan.highlight 
+                    ? 'bg-sky-500 text-black font-bold hover:bg-sky-400' 
+                    : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800'
+                }`}
+              >
+                INITIALIZE PROJECT
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Tabel Extra Tech - care oferă greutate și aer premium */}
+      <section className="max-w-4xl mx-auto px-4 pb-24">
+        <div className="border border-zinc-900 rounded-lg p-6 bg-[#08080a] font-mono">
+          <h4 className="text-xs uppercase text-sky-400 tracking-wider mb-4">// ADDIȚIONALE & INFORMAȚII TEHNICE</h4>
+          <div className="space-y-3 text-xs text-zinc-400">
+            <p><span className="text-white">Format fișiere:</span> RAW convertit în TIFF pe 16-biți sau JPEG maxim calitativ.</p>
+            <p><span className="text-white">Echipament utilizat:</span> Body Full-Frame + Obiective fixe ultra-luminoase (f/1.2 - f/1.4).</p>
+            <p><span className="text-white">Retușare:</span> Include corecție geometrică completă, eliminare elemente parazite și grading cromatic personalizat.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer className="text-center py-8 border-t border-zinc-950 text-[10px] text-zinc-600 font-mono">
+        &copy; 2026 ALX VISUALS. Built for performance.
+      </footer>
+    </main>
+  );
+}
