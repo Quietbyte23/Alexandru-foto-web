@@ -9,25 +9,24 @@ interface Photo {
   src: string;
   title: string;
   category: string;
-  size: string; 
   lens: string;     
   location: string; 
 }
 
 // Colecția premium: Portrete umane expresive și natură grandioasă
 const PORTFOLIO_PHOTOS: Photo[] = [
-  { id: '1', src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb', title: 'Cinematic Portrait / Golden Hour', category: 'PORTRAIT', size: 'md:col-span-2', lens: '85mm f/1.4 Portrait Pro', location: 'Studio Outdoor' },
-  { id: '2', src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', title: 'The Endless Horizon', category: 'NATURE', size: 'md:col-span-1', lens: '24mm f/2.8 Ultra-Wide', location: 'Maldives Coast' },
-  { id: '3', src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b', title: 'Deep Alps Majesty', category: 'NATURE', size: 'md:col-span-1', lens: '70-200mm f/4.0', location: 'Dolomites, IT' },
-  { id: '4', src: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea', title: 'Street Character Study', category: 'PORTRAIT', size: 'md:col-span-2', lens: '35mm f/1.4 G-Master', location: 'London Streets' },
-  { id: '5', src: 'https://images.unsplash.com/photo-1472214222541-d510753a8707', title: 'Serenity in the Valley', category: 'NATURE', size: 'md:col-span-3', lens: '50mm f/1.2 Art', location: 'Icelandic Highlands' },
-  { id: '6', src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9', title: 'Urban Fashion Vignette', category: 'PORTRAIT', size: 'md:col-span-1', lens: '85mm f/1.4', location: 'Paris, FR' },
-  { id: '7', src: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d', title: 'Path Through the Ancients', category: 'NATURE', size: 'md:col-span-1', lens: '24mm Tilt-Shift', location: 'Kyoto Forest, JP' },
-  { id: '8', src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04', title: 'High Contrast Profile', category: 'PORTRAIT', size: 'md:col-span-1', lens: '90mm Macro f/2.8', location: 'Studio Light' },
-  { id: '9', src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05', title: 'Morning Fog Awakening', category: 'NATURE', size: 'md:col-span-2', lens: '24-70mm f/2.8 Pro', location: 'Transylvania, RO' },
-  { id: '10', src: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d', title: 'The Sculpted Face', category: 'PORTRAIT', size: 'md:col-span-1', lens: '135mm f/1.8 Linear', location: 'Milano, IT' },
-  { id: '11', src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e', title: 'Sunbeams Through Canopy', category: 'NATURE', size: 'md:col-span-1', lens: '16-35mm f/4.0 Wide', location: 'Redwood, US' },
-  { id: '12', src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1', title: 'Motion in Daylight', category: 'PORTRAIT', size: 'md:col-span-2', lens: '35mm f/1.4 G-Master', location: 'New York, US' },
+  { id: '1', src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb', title: 'Cinematic Portrait / Golden Hour', category: 'PORTRAIT', lens: '85mm f/1.4 Portrait Pro', location: 'Studio Outdoor' },
+  { id: '2', src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', title: 'The Endless Horizon', category: 'NATURE', lens: '24mm f/2.8 Ultra-Wide', location: 'Maldives Coast' },
+  { id: '3', src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b', title: 'Deep Alps Majesty', category: 'NATURE', lens: '70-200mm f/4.0', location: 'Dolomites, IT' },
+  { id: '4', src: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea', title: 'Street Character Study', category: 'PORTRAIT', lens: '35mm f/1.4 G-Master', location: 'London Streets' },
+  { id: '5', src: 'https://images.unsplash.com/photo-1472214222541-d510753a8707', title: 'Serenity in the Valley', category: 'NATURE', lens: '50mm f/1.2 Art', location: 'Icelandic Highlands' },
+  { id: '6', src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9', title: 'Urban Fashion Vignette', category: 'PORTRAIT', lens: '85mm f/1.4', location: 'Paris, FR' },
+  { id: '7', src: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d', title: 'Path Through the Ancients', category: 'NATURE', lens: '24mm Tilt-Shift', location: 'Kyoto Forest, JP' },
+  { id: '8', src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04', title: 'High Contrast Profile', category: 'PORTRAIT', lens: '90mm Macro f/2.8', location: 'Studio Light' },
+  { id: '9', src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05', title: 'Morning Fog Awakening', category: 'NATURE', lens: '24-70mm f/2.8 Pro', location: 'Transylvania, RO' },
+  { id: '10', src: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d', title: 'The Sculpted Face', category: 'PORTRAIT', lens: '135mm f/1.8 Linear', location: 'Milano, IT' },
+  { id: '11', src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e', title: 'Sunbeams Through Canopy', category: 'NATURE', lens: '16-35mm f/4.0 Wide', location: 'Redwood, US' },
+  { id: '12', src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1', title: 'Motion in Daylight', category: 'PORTRAIT', lens: '35mm f/1.4 G-Master', location: 'New York, US' },
 ];
 
 export default function Home() {
@@ -93,13 +92,13 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Portofoliu Grid Masiv - 12 Imagini Asimetrice */}
+      {/* Portofoliu Grid Masiv - Modificat pentru imagini MICI, simetrice și centrate */}
       <section className="max-w-7xl mx-auto px-4 pb-32">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
           {filteredPhotos.map((photo) => (
             <div
               key={photo.id}
-              className={`group relative overflow-hidden rounded-lg bg-zinc-950 border border-zinc-900/40 cursor-pointer h-[440px] transition-all duration-700 hover:border-zinc-600 ${photo.size}`}
+              className="group relative overflow-hidden rounded-lg bg-zinc-950 border border-zinc-900/40 cursor-pointer w-full max-w-[320px] h-[380px] transition-all duration-700 hover:border-zinc-600"
               onClick={() => setSelectedPhoto(photo)}
             >
               <Image
@@ -111,13 +110,13 @@ export default function Home() {
               />
               
               {/* Overlay de Control (Apare la hover) */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-4">
                 <div className="flex items-center justify-between border-b border-zinc-800 pb-2 mb-2">
-                  <span className="text-[10px] font-mono tracking-widest text-zinc-400 uppercase">{photo.category}</span>
-                  <span className="text-[10px] font-mono text-zinc-400">{photo.location}</span>
+                  <span className="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">{photo.category}</span>
+                  <span className="text-[9px] font-mono text-zinc-400">{photo.location}</span>
                 </div>
-                <div className="flex justify-between items-center">
-                  <h3 className="text-sm font-light text-white tracking-wide">{photo.title}</h3>
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-xs font-light text-white tracking-wide">{photo.title}</h3>
                   <span className="text-[9px] font-mono text-zinc-500 italic">{photo.lens}</span>
                 </div>
               </div>
@@ -125,7 +124,7 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Buton care trimite direct la pagina de contact funcțională */}
+        {/* Buton Contact */}
         <div className="text-center mt-24">
           <Link href="/contact" className="inline-block font-mono text-xs tracking-widest border border-zinc-800 hover:border-white px-8 py-4 rounded-none uppercase text-zinc-400 hover:text-white transition-all duration-300">
             DISCUTĂ O SESIUNE FOTO / REZERVĂRI FORMULAR →
