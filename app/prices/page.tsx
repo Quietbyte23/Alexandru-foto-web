@@ -53,78 +53,149 @@ export default function Prices() {
       {/* TITLU */}
       <section style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', padding: '80px 24px 40px 24px' }}>
         <p style={{ fontSize: '10px', fontFamily: 'monospace', letterSpacing: '4px', color: '#a1a1aa', margin: '0 0 16px 0', textTransform: 'uppercase' }}>
-          INVESTIȚIE // STRUCTURĂ CADRE 2026
+          TRANSPARENȚĂ // LISTĂ SERVICII 2026
         </p>
         <h2 style={{ fontSize: '36px', fontWeight: 200, letterSpacing: '-0.5px', margin: '0 0 16px 0', color: '#ffffff' }}>
-          Servicii & Tarife <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: '#a1a1aa' }}>In RON</span>
+          Servicii & Tarife
         </h2>
       </section>
 
-      {/* CARDS PACHETE */}
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px 120px 24px', boxSizing: 'border-box' }}>
+      {/* GRID TARIFE */}
+      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px 60px 24px', boxSizing: 'border-box' }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '30px'
         }}>
           
-          {/* PACHET 1 */}
-          <div style={{ padding: '40px 30px', backgroundColor: '#09090b', border: '1px solid #18181b', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            <div>
-              <p style={{ fontFamily: 'monospace', fontSize: '10px', color: '#71717a', margin: '0 0 10px 0' }}>// SYS.01_ESSENTIAL</p>
-              <h3 style={{ fontSize: '20px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff' }}>Portret Urban / Editorial</h3>
-              <p style={{ fontSize: '24px', fontWeight: 300, color: '#ffffff', margin: '0 0 30px 0' }}>1.250 RON</p>
-              <ul style={{ paddingLeft: '0', listStyle: 'none', fontSize: '13px', color: '#a1a1aa', lineHeight: '2.2', margin: '0 0 40px 0' }}>
-                <li>• 1.5 ore sesiune foto (focalizare pe expresie)</li>
-                <li>• 15 cadre editate în detaliu high-end</li>
-                <li>• Moodboard digital personalizat</li>
-                <li>• Galerie privată securizată pentru download</li>
-              </ul>
+          {/* SEDINTE FOTO */}
+          <div style={{ padding: '30px', backgroundColor: '#09090b', border: '1px solid #18181b' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff', letterSpacing: '1px' }}>📸 PORTRETE / ȘEDINȚE FOTO</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '14px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #18181b', paddingBottom: '8px' }}>
+                <div><span style={{ color: '#ffffff' }}>Mini</span> <span style={{ color: '#71717a', fontSize: '12px' }}>(30 min, 15-20 foto)</span></div>
+                <span style={{ fontWeight: 600 }}>150 LEI</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #18181b', paddingBottom: '8px' }}>
+                <div><span style={{ color: '#ffffff' }}>Standard</span> <span style={{ color: '#71717a', fontSize: '12px' }}>(1 oră, 40-50 foto)</span></div>
+                <span style={{ fontWeight: 600 }}>300 LEI</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px' }}>
+                <div><span style={{ color: '#ffffff' }}>Premium</span> <span style={{ color: '#71717a', fontSize: '12px' }}>(2 ore, 80-100 foto)</span></div>
+                <span style={{ fontWeight: 600, color: '#a1a1aa' }}>500 LEI</span>
+              </div>
             </div>
-            <Link href="/contact" style={{ display: 'block', textAlign: 'center', backgroundColor: 'transparent', border: '1px solid #27272a', padding: '12px 0', fontSize: '11px', fontFamily: 'monospace', color: '#ffffff', textDecoration: 'none', letterSpacing: '1px' }}>
-              INIȚIAZĂ REZERVARE
-            </Link>
           </div>
 
-          {/* PACHET 2 */}
-          <div style={{ padding: '40px 30px', backgroundColor: '#0c0c0e', border: '1px solid #ffffff', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
-            <span style={{ position: 'absolute', top: '15px', right: '20px', fontFamily: 'monospace', fontSize: '8px', color: '#ffffff', border: '1px solid #ffffff', padding: '2px 6px' }}>RECOMANDAT</span>
-            <div>
-              <p style={{ fontFamily: 'monospace', fontSize: '10px', color: '#a1a1aa', margin: '0 0 10px 0' }}>// SYS.02_PREMIUM</p>
-              <h3 style={{ fontSize: '20px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff' }}>Fashion & Cyberpunk Lookbook</h3>
-              <p style={{ fontSize: '24px', fontWeight: 300, color: '#ffffff', margin: '0 0 30px 0' }}>2.200 RON</p>
-              <ul style={{ paddingLeft: '0', listStyle: 'none', fontSize: '13px', color: '#a1a1aa', lineHeight: '2.2', margin: '0 0 40px 0' }}>
-                <li>• 3 ore sesiune foto (Locații urbane / geometrice)</li>
-                <li>• 35 fotografii procesate colorizare avansată</li>
-                <li>• Schimbări de ținute și texturi controlate</li>
-                <li>• Drepturi de utilizare portofoliu / comercial</li>
-              </ul>
+          {/* MAJORATE */}
+          <div style={{ padding: '30px', backgroundColor: '#09090b', border: '1px solid #18181b' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff', letterSpacing: '1px' }}>🎂 MAJORATE</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '14px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #18181b', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Durată: 2 ore</span>
+                <span style={{ fontWeight: 600 }}>450 LEI</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #18181b', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Durată: 4 ore</span>
+                <span style={{ fontWeight: 600 }}>800 LEI</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Eveniment complet</span>
+                <span style={{ fontWeight: 600 }}>1.200 - 1.500 LEI</span>
+              </div>
             </div>
-            <Link href="/contact" style={{ display: 'block', textAlign: 'center', backgroundColor: '#ffffff', border: '1px solid #ffffff', padding: '12px 0', fontSize: '11px', fontFamily: 'monospace', color: '#000000', textDecoration: 'none', fontWeight: 600, letterSpacing: '1px' }}>
-              SECURIZEAZĂ SLOTUL
-            </Link>
           </div>
 
-          {/* PACHET 3 */}
-          <div style={{ padding: '40px 30px', backgroundColor: '#09090b', border: '1px solid #18181b', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            <div>
-              <p style={{ fontFamily: 'monospace', fontSize: '10px', color: '#71717a', margin: '0 0 10px 0' }}>// SYS.03_CUSTOM</p>
-              <h3 style={{ fontSize: '20px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff' }}>Natură / Proiect Comercial</h3>
-              <p style={{ fontSize: '24px', fontWeight: 300, color: '#ffffff', margin: '0 0 30px 0' }}>De la 3.000 RON</p>
-              <ul style={{ paddingLeft: '0', listStyle: 'none', fontSize: '13px', color: '#a1a1aa', lineHeight: '2.2', margin: '0 0 40px 0' }}>
-                <li>• Proiecte concept (peisaje, geometrie naturală)</li>
-                <li>• Rezoluție ultra-înaltă optimizată pentru print</li>
-                <li>• Consultanță tehnică completă echipament</li>
-                <li>• Deplasări specifice în țară / exterior</li>
-              </ul>
+          {/* NUNTI */}
+          <div style={{ padding: '30px', backgroundColor: '#09090b', border: '1px solid #18181b' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff', letterSpacing: '1px' }}>💍 NUNȚI</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '14px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #18181b', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Cununie civilă</span>
+                <span style={{ fontWeight: 600 }}>500 - 700 LEI</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #18181b', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Nuntă (8-10 ore)</span>
+                <span style={{ fontWeight: 600 }}>2.000 - 3.500 LEI</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Pachet complet</span>
+                <span style={{ fontWeight: 600 }}>3.500 - 5.000 LEI</span>
+              </div>
             </div>
-            <Link href="/contact" style={{ display: 'block', textAlign: 'center', backgroundColor: 'transparent', border: '1px solid #27272a', padding: '12px 0', fontSize: '11px', fontFamily: 'monospace', color: '#ffffff', textDecoration: 'none', letterSpacing: '1px' }}>
-              SOLICITĂ FORMULAR CUSTOM
-            </Link>
+          </div>
+
+          {/* BOTEZ */}
+          <div style={{ padding: '30px', backgroundColor: '#09090b', border: '1px solid #18181b' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff', letterSpacing: '1px' }}>👶 BOTEZ</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '14px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #18181b', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Durată: 2-3 ore</span>
+                <span style={{ fontWeight: 600 }}>600 - 900 LEI</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Eveniment complet</span>
+                <span style={{ fontWeight: 600 }}>1.200 - 1.800 LEI</span>
+              </div>
+            </div>
+          </div>
+
+          {/* ABSOLVIRE */}
+          <div style={{ padding: '30px', backgroundColor: '#09090b', border: '1px solid #18181b' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff', letterSpacing: '1px' }}>🎓 ABSOLVIRE / BANCHET</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '14px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #18181b', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Ședință individuală</span>
+                <span style={{ fontWeight: 600 }}>200 LEI</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Grupuri</span>
+                <span style={{ fontWeight: 600 }}>de la 150 LEI / pers.</span>
+              </div>
+            </div>
+          </div>
+
+          {/* CUPLURI SI ANIMALE */}
+          <div style={{ padding: '30px', backgroundColor: '#09090b', border: '1px solid #18181b' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 400, margin: '0 0 20px 0', color: '#ffffff', letterSpacing: '1px' }}>❤️ CUPLURI & 🐶 ANIMALE</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '14px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #18181b', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Cupluri (1 oră)</span>
+                <span style={{ fontWeight: 600 }}>300 LEI</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #18181b', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Cupluri (2 ore)</span>
+                <span style={{ fontWeight: 600 }}>500 LEI</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px' }}>
+                <span style={{ color: '#ffffff' }}>Animale de companie (30-45 min)</span>
+                <span style={{ fontWeight: 600 }}>200 LEI</span>
+              </div>
+            </div>
           </div>
 
         </div>
       </main>
+
+      {/* SECTIUNEA CE ESTE INCLUS */}
+      <section style={{ maxWidth: '800px', margin: '40px auto 120px auto', padding: '40px 24px', borderTop: '1px solid #18181b' }}>
+        <h3 style={{ fontSize: '14px', fontFamily: 'monospace', letterSpacing: '2px', color: '#ffffff', textTransform: 'uppercase', marginBottom: '24px', textAlign: 'center' }}>
+          // CE ESTE INCLUS ÎN FIECARE PACHET
+        </h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px', fontSize: '13px', color: '#a1a1aa' }}>
+          <div>✅ Fotografii editate profesional fin</div>
+          <div>✅ Livrare digitală securizată (Google Drive / WeTransfer)</div>
+          <div>✅ Toate cadrele predate sunt fără filigran</div>
+          <div>✅ Livrare rapidă în 3-7 zile lucrătoare</div>
+        </div>
+        
+        <div style={{ textAlign: 'center', marginTop: '60px' }}>
+          <Link href="/contact" style={{ display: 'inline-block', backgroundColor: '#ffffff', color: '#000000', fontFamily: 'monospace', fontSize: '11px', letterSpacing: '2px', padding: '16px 32px', textDecoration: 'none', fontWeight: 600 }}>
+            REZERVĂ O ȘEDINȚĂ FOTO →
+          </Link>
+        </div>
+      </section>
+
     </div>
   );
 }
