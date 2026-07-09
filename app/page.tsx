@@ -10,7 +10,7 @@ interface Photo {
   category: string;
   lens: string;     
   location: string; 
-  span: string; // Controlăm exact dimensiunea pe ecran
+  span: string; 
 }
 
 const PORTFOLIO_PHOTOS: Photo[] = [
@@ -70,8 +70,13 @@ export default function Home() {
         }}>
           <div>
             <h1 style={{ fontSize: '14px', fontWeight: 600, letterSpacing: '2px', margin: 0, color: '#ffffff' }}>
-  ALEXANDRU <span style={{ color: '#71717a', fontWeight: 300 }}>| PHOTOGRAPHY</span>
-</h1>
+              ALEXANDRU <span style={{ color: '#71717a', fontWeight: 300 }}>| PHOTOGRAPHY</span>
+            </h1>
+            <p style={{ fontSize: '9px', color: '#52525b', fontFamily: 'monospace', margin: '2px 0 0 0', letterSpacing: '1px' }}>
+              PORTRAIT & LANDSCAPE ARTISTRY
+            </p>
+          </div>
+
           <nav style={{ display: 'flex', gap: '30px', fontFamily: 'monospace', fontSize: '12px', letterSpacing: '1px' }}>
             <Link href="/" style={{ color: '#ffffff', textDecoration: 'none', borderBottom: '1px solid #ffffff', paddingBottom: '4px' }}>
               PORTOFOLIU
@@ -90,7 +95,7 @@ export default function Home() {
         </p>
         <h2 style={{ fontSize: '36px', fontWeight: 200, letterSpacing: '-0.5px', margin: '0 0 16px 0', color: '#ffffff', lineHeight: '1.3' }}>
           Oameni, natură și povești nespuse.<br />
-          <span style={{ fontFamily: 'Georgia, serif', WarmGray: '#a1a1aa', fontStyle: 'italic', color: '#a1a1aa' }}>Surprinderea emoției în starea ei pură.</span>
+          <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: '#a1a1aa' }}>Surprinderea emoției în starea ei pură.</span>
         </h2>
       </section>
 
@@ -118,7 +123,7 @@ export default function Home() {
         ))}
       </div>
 
-      {/* PORTOFOLIU GRID ASIMETRIC PREMIUM STABIL */}
+      {/* PORTOFOLIU GRID PREMIUM */}
       <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px 120px 24px', boxSizing: 'border-box' }}>
         <div style={{
           display: 'grid',
@@ -138,7 +143,7 @@ export default function Home() {
                 overflow: 'hidden',
               }}
             >
-              {/* Caseta Foto fixa, proporții perfecte */}
+              {/* Caseta Foto */}
               <div style={{ width: '100%', height: '420px', overflow: 'hidden', position: 'relative', backgroundColor: '#18181b' }}>
                 <img
                   src={photo.src}
@@ -169,7 +174,7 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Buton Contact Formular */}
+        {/* Buton Contact */}
         <div style={{ textAlign: 'center', marginTop: '80px' }}>
           <Link href="/contact" style={{
             display: 'inline-block',
@@ -188,7 +193,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LIGHTBOX MODAL FULLSCREEN */}
+      {/* LIGHTBOX MODAL */}
       {selectedPhoto && (
         <div 
           onClick={() => setSelectedPhoto(null)}
