@@ -1,119 +1,141 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 
-function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    package: 'PKG_01',
-    concept: '',
-  });
+export default function Contact() {
+  const [form, setForm] = useState({ name: '', email: '', package: 'PORTRAIT', message: '' });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const subject = encodeURIComponent(`Solicitare Sesiune Foto: ${formData.package} - ${formData.name}`);
-    const body = encodeURIComponent(
-      `Salut, Alexandru,\n\n` +
-      `Nume Client: ${formData.name}\n` +
-      `Email Contact: ${formData.email}\n` +
-      `Pachet Selectat: ${formData.package}\n\n` +
-      `Concept / Detalii Proiect:\n${formData.concept}\n\n` +
-      `Trimis via alexandru.photography`
-    );
-
-    window.location.href = `mailto:alex@yourdomain.com?subject=${subject}&body=${body}`;
+    alert(`Mulțumesc, ${form.name}! Mesajul tău a fost trimis simulate. Voi reveni în 24h.`);
   };
 
   return (
-    <main className="min-h-screen bg-[#030303] text-zinc-100 selection:bg-zinc-400 selection:text-black p-4">
-      {/* Header consistent */}
-      <header className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b border-zinc-900/40">
-        <div>
-          <Link href="/" className="text-md font-medium tracking-[0.2em] uppercase text-white hover:opacity-80 transition-opacity">
-            ALEXANDRU <span className="text-zinc-500 font-light">| PHOTOGRAPHY</span>
-          </Link>
+    <div style={{
+      backgroundColor: '#050505',
+      color: '#f4f4f5',
+      minHeight: '100vh',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      margin: 0,
+      padding: 0,
+      boxSizing: 'border-box'
+    }}>
+      
+      {/* HEADER FIXAT */}
+      <header style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 50,
+        width: '100%',
+        backgroundColor: 'rgba(5, 5, 5, 0.85)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid #18181b',
+        boxSizing: 'border-box'
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: '20px 24px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center'
+        }}>
+          <div>
+            <h1 style={{ fontSize: '14px', fontWeight: 600, letterSpacing: '2px', margin: 0, color: '#ffffff' }}>
+              ALEXANDRU <span style={{ color: '#71717a', fontWeight: 300 }}>| PHOTOGRAPHY</span>
+            </h1>
+          </div>
+
+          <nav style={{ display: 'flex', gap: '30px', fontFamily: 'monospace', fontSize: '12px', letterSpacing: '1px' }}>
+            <Link href="/" style={{ color: '#a1a1aa', textDecoration: 'none', paddingBottom: '4px' }}>
+              PORTOFOLIU
+            </Link>
+            <Link href="/prices" style={{ color: '#a1a1aa', textDecoration: 'none', paddingBottom: '4px' }}>
+              SERVICII & TARIFE
+            </Link>
+          </nav>
         </div>
-        <nav className="flex items-center gap-8 font-mono text-xs tracking-widest uppercase">
-          <Link href="/" className="text-zinc-500 hover:text-zinc-200 transition-colors">Portofoliu</Link>
-          <span className="text-white border-b border-white pb-1 font-medium cursor-default">Contact</span>
-        </nav>
       </header>
 
-      {/* Zona Formular */}
-      <section className="max-w-2xl mx-auto pt-20 pb-32 px-4">
-        <div className="text-center mb-12">
-          <p className="text-[10px] font-mono tracking-[0.4em] text-zinc-500 uppercase mb-2">// BOOKING ENGINE</p>
-          <h2 className="text-3xl font-light tracking-tight text-white">Inițiază o sesiune foto</h2>
-          <p className="text-xs text-zinc-400 mt-2 font-light">Completează detaliile de mai jos pentru a stabili conceptul vizual.</p>
-        </div>
+      {/* FORMULAR CONTACT SECȚIUNE */}
+      <main style={{ maxWidth: '600px', margin: '0 auto', padding: '80px 24px 120px 24px', boxSizing: 'border-box' }}>
+        <p style={{ fontSize: '10px', fontFamily: 'monospace', letterSpacing: '4px', color: '#a1a1aa', margin: '0 0 16px 0', textTransform: 'uppercase', textAlign: 'center' }}>
+          SĂ CREĂM CEVA DEOSEBIT // BOOKINGS 2026
+        </p>
+        <h2 style={{ fontSize: '32px', fontWeight: 200, letterSpacing: '-0.5px', margin: '0 0 40px 0', color: '#ffffff', textAlign: 'center' }}>
+          Discută o sesiune foto
+        </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6 font-mono text-xs">
-          <div>
-            <label className="block text-zinc-400 uppercase tracking-wider mb-2">Nume Complet *</label>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', uppercase: 'true', letterSpacing: '1px' }}>NUME COMPLET</label>
             <input 
               type="text" 
               required
-              className="w-full bg-zinc-950 border border-zinc-900 rounded p-3 text-white focus:outline-none focus:border-zinc-500 transition-colors"
-              placeholder="Ex: Alex Popescu"
-              value={formData.name}
-              onChange={(e) => setFormData({...formData, name: e.target.value})}
+              value={form.name}
+              onChange={(e) => setForm({...form, name: e.target.value})}
+              style={{ backgroundColor: '#09090b', border: '1px solid #18181b', padding: '14px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
             />
           </div>
 
-          <div>
-            <label className="block text-zinc-400 uppercase tracking-wider mb-2">Adresă Email *</label>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', letterSpacing: '1px' }}>ADRESĂ DE EMAIL</label>
             <input 
               type="email" 
               required
-              className="w-full bg-zinc-950 border border-zinc-900 rounded p-3 text-white focus:outline-none focus:border-zinc-500 transition-colors"
-              placeholder="Ex: alex@exemplu.com"
-              value={formData.email}
-              onChange={(e) => setFormData({...formData, email: e.target.value})}
+              value={form.email}
+              onChange={(e) => setForm({...form, email: e.target.value})}
+              style={{ backgroundColor: '#09090b', border: '1px solid #18181b', padding: '14px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
             />
           </div>
 
-          <div>
-            <label className="block text-zinc-400 uppercase tracking-wider mb-2">Tipul de Sesiune / Pachet</label>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', letterSpacing: '1px' }}>PACHETUL DORIT</label>
             <select 
-              className="w-full bg-zinc-950 border border-zinc-900 rounded p-3 text-white focus:outline-none focus:border-zinc-500 transition-colors appearance-none"
-              value={formData.package}
-              onChange={(e) => setFormData({...formData, package: e.target.value})}
+              value={form.package}
+              onChange={(e) => setForm({...form, package: e.target.value})}
+              style={{ backgroundColor: '#09090b', border: '1px solid #18181b', padding: '14px', color: '#ffffff', fontSize: '14px', outline: 'none', appearance: 'none' }}
             >
-              <option value="PKG_01_PORTRAIT">PORTRET CINEMATIC (180€)</option>
-              <option value="PKG_02_NATURE">PEISAJ / ADVENTURE EDITORIAL (400€)</option>
-              <option value="PKG_03_CUSTOM">FINE ART ARCHIVE (750€+)</option>
+              <option value="PORTRAIT">PORTRET EDITORIAL (250€)</option>
+              <option value="FASHION">FASHION & LOOKBOOK (450€)</option>
+              <option value="COMMERCIAL">PEISAJ / COMERCIAL (CUSTOM)</option>
             </select>
           </div>
 
-          <div>
-            <label className="block text-zinc-400 uppercase tracking-wider mb-2">Ideea sau Conceptul tău (Locație, vibe, haine) *</label>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', letterSpacing: '1px' }}>DETALII VIZIUNE / CONTEXT PROIECT</label>
             <textarea 
               rows={5}
               required
-              className="w-full bg-zinc-950 border border-zinc-900 rounded p-3 text-white focus:outline-none focus:border-zinc-500 transition-colors resize-none leading-relaxed"
-              placeholder="Descrie pe scurt ce ai în minte pentru această sesiune..."
-              value={formData.concept}
-              onChange={(e) => setFormData({...formData, concept: e.target.value})}
+              value={form.message}
+              onChange={(e) => setForm({...form, message: e.target.value})}
+              placeholder="Spune-mi câteva cuvinte despre ideea ta..."
+              style={{ backgroundColor: '#09090b', border: '1px solid #18181b', padding: '14px', color: '#ffffff', fontSize: '14px', outline: 'none', resize: 'none', fontFamily: 'inherit' }}
             />
           </div>
 
           <button 
-            type="submit"
-            className="w-full bg-zinc-100 hover:bg-white text-black font-semibold py-4 rounded tracking-widest uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(255,255,255,0.05)]"
+            type="submit" 
+            style={{
+              backgroundColor: '#ffffff', 
+              color: '#000000', 
+              border: '1px solid #ffffff', 
+              padding: '16px', 
+              fontSize: '12px', 
+              fontFamily: 'monospace', 
+              fontWeight: 600, 
+              letterSpacing: '2px', 
+              cursor: 'pointer',
+              marginTop: '10px',
+              transition: 'background-color 0.3s'
+            }}
           >
-            Trimite Solicitarea via Email
+            TRIMITE SOLICITAREA →
           </button>
         </form>
-      </section>
-
-      <footer className="text-center py-8 border-t border-zinc-900 text-[10px] text-zinc-600 font-mono">
-        &copy; 2026 ALEXANDRU PHOTOGRAPHY. SECURE ENCRYPTED TRANSFER.
-      </footer>
-    </main>
+      </main>
+    </div>
   );
 }
-
-export default ContactPage;
