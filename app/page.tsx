@@ -1,5 +1,6 @@
 export default function Home() {
-  const srcPoza = "/numele_pozei_tale.jpg"; 
+  // Folosim o imagine direct de pe internet pentru test ca să fii sigur că merge instant!
+  const srcPoza = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop"; 
 
   return (
     <main style={{
@@ -8,18 +9,22 @@ export default function Home() {
       minHeight: "100vh",
       display: "flex",
       flexDirection: "column",
+      justifyContent: "space-between",
       margin: 0,
       padding: 0,
       boxSizing: "border-box",
-      fontFamily: "sans-serif"
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
     }}>
       
+      {/* Containerul imaginii */}
       <div style={{
         flex: 1,
         position: "relative",
         width: "100%",
-        height: "calc(100vh - 140px)",
-        overflow: "hidden"
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
       }}>
         <img 
           src={srcPoza} 
@@ -33,39 +38,48 @@ export default function Home() {
         />
       </div>
 
+      {/* Bara de jos premium */}
       <div style={{
         backgroundColor: "black",
-        padding: "20px 30px",
-        borderTop: "1px solid #1f1f1f",
+        padding: "30px 40px",
+        borderTop: "1px solid #121212",
         display: "flex",
-        flexDirection: "column",
-        gap: "5px"
+        justifyContent: "space-between",
+        alignItems: "flex-end",
+        flexWrap: "wrap",
+        gap: "20px"
       }}>
-        <span style={{
-          fontSize: "11px",
-          textTransform: "uppercase",
-          letterSpacing: "2px",
-          color: "#666"
-        }}>
-          Portrait
-        </span>
-        
-        <h1 style={{
-          fontSize: "24px",
-          margin: "0 0 5px 0",
-          fontWeight: "bold",
-          letterSpacing: "-0.5px"
-        }}>
-          Urban Fashion Vignette
-        </h1>
+        <div>
+          <span style={{
+            fontSize: "11px",
+            textTransform: "uppercase",
+            letterSpacing: "3px",
+            color: "#555",
+            fontWeight: 600,
+            display: "block",
+            marginBottom: "4px"
+          }}>
+            Portrait
+          </span>
+          <h1 style={{
+            fontSize: "28px",
+            margin: 0,
+            fontWeight: "700",
+            letterSpacing: "-0.5px"
+          }}>
+            Urban Fashion Vignette
+          </h1>
+        </div>
         
         <div style={{
           fontSize: "14px",
-          color: "#aaa",
-          fontFamily: "monospace"
+          color: "#888",
+          fontFamily: "monospace",
+          textAlign: "right",
+          lineHeight: "1.5"
         }}>
-          <div style={{ marginBottom: "2px" }}>85mm f/1.4</div>
-          <div style={{ fontSize: "11px", color: "#666", textTransform: "uppercase" }}>
+          <div style={{ color: "#aaa", fontWeight: "bold" }}>85mm f/1.4</div>
+          <div style={{ fontSize: "11px", color: "#555", textTransform: "uppercase", letterSpacing: "1px" }}>
             NATURE Kyoto Forest, JP
           </div>
         </div>
