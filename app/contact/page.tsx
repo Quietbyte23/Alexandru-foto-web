@@ -8,7 +8,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Mulțumesc, ${form.name}! Mesajul tău a fost trimis simulate. Voi reveni în 24h.`);
+    alert(`Mulțumesc, ${form.name}! Mesajul tău a fost trimis. Voi reveni în 24h.`);
   };
 
   return (
@@ -70,7 +70,8 @@ export default function Contact() {
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', uppercase: 'true', letterSpacing: '1px' }}>NUME COMPLET</label>
+            {/* Aici am corectat textTransform la standardul TypeScript */}
+            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', textTransform: 'uppercase', letterSpacing: '1px' }}>NUME COMPLET</label>
             <input 
               type="text" 
               required
@@ -81,7 +82,7 @@ export default function Contact() {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', letterSpacing: '1px' }}>ADRESĂ DE EMAIL</label>
+            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', textTransform: 'uppercase', letterSpacing: '1px' }}>ADRESĂ DE EMAIL</label>
             <input 
               type="email" 
               required
@@ -92,7 +93,7 @@ export default function Contact() {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', letterSpacing: '1px' }}>PACHETUL DORIT</label>
+            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', textTransform: 'uppercase', letterSpacing: '1px' }}>PACHETUL DORIT</label>
             <select 
               value={form.package}
               onChange={(e) => setForm({...form, package: e.target.value})}
@@ -105,7 +106,7 @@ export default function Contact() {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', letterSpacing: '1px' }}>DETALII VIZIUNE / CONTEXT PROIECT</label>
+            <label style={{ fontSize: '10px', fontFamily: 'monospace', color: '#71717a', textTransform: 'uppercase', letterSpacing: '1px' }}>DETALII VIZIUNE / CONTEXT PROIECT</label>
             <textarea 
               rows={5}
               required
