@@ -7,8 +7,8 @@ export default function Contact() {
   const [lang, setLang] = useState<'RO' | 'ENG'>('RO');
   const [form, setForm] = useState({ name: '', email: '', package: 'PORTRET_STANDARD', message: '' });
 
-  // Schimbă numărul de mai jos cu numărul tău real de telefon!
-  const NUMAR_TELEFON = '40712345678'; 
+  // Numărul tău de telefon configurat corect pentru API-ul WhatsApp
+  const NUMAR_TELEFON = '40743346249'; 
 
   const handleWhatsAppClick = () => {
     const textulMeu = encodeURIComponent(
@@ -71,7 +71,7 @@ export default function Contact() {
           {lang === 'RO' ? 'Alege calea cea mai simplă pentru tine.' : 'Choose the method that works best for you.'}
         </p>
 
-        {/* CASSETĂ ZONA MAI DETALIATĂ: APASĂ PENTRU WHATSAPP DIRECT */}
+        {/* CASSETĂ WHATSAPP DIRECT */}
         <div style={{
           backgroundColor: '#25D366',
           color: '#ffffff',
