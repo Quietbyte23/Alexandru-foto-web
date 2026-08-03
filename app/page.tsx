@@ -3,83 +3,138 @@
 import Image from "next/image";
 import { useState } from "react";
 
-// Importăm direct imaginile din public pentru a genera automat blurlhash-ul Next.js
-import sunsetGolden from "../public/sunset-golden.webp";
-import cathedralDetails from "../public/cathedral-details.webp";
-import architecturalSymmetry from "../public/architectural-symmetry.webp";
-import urbanPerspective from "../public/urban-perspective.webp";
-import historicFacade from "../public/historic-facade.webp";
-import shadowPlay from "../public/shadow-play.webp";
-import goldenHourArch from "../public/golden-hour-arch.webp";
-import streetMinimalism from "../public/street-minimalism.webp";
-
 interface Photo {
   id: string;
   titleEn: string;
   titleRo: string;
-  src: any;
+  categoryRo: string;
+  categoryEn: string;
+  location: string;
+  src: string;
 }
 
-const photos: Photo[] = [
-  { id: "1", titleEn: "Golden Sunset", titleRo: "Apus Auriu", src: sunsetGolden },
-  { id: "2", titleEn: "Cathedral Details", titleRo: "Detalii Catedrală", src: cathedralDetails },
-  { id: "3", titleEn: "Architectural Symmetry", titleRo: "Simetrie Arhitecturală", src: architecturalSymmetry },
-  { id: "4", titleEn: "Urban Perspective", titleRo: "Perspectivă Urbană", src: urbanPerspective },
-  { id: "5", titleEn: "Historic Facade", titleRo: "Fațadă Istorică", src: historicFacade },
-  { id: "6", titleEn: "Shadow Play", titleRo: "Joc de Umbre", src: shadowPlay },
-  { id: "7", titleEn: "Golden Hour Arch", titleRo: "Arcadă la Apus", src: goldenHourArch },
-  { id: "8", titleEn: "Street Minimalism", titleRo: "Minimalism Urban", src: streetMinimalism },
+const photosData: Photo[] = [
+  { id: "1", titleEn: "Natural Portrait", titleRo: "Portret în Natură", categoryRo: "Portrete", categoryEn: "PORTRAIT", location: "NATURĂ", src: "/portret-natura.webp" },
+  { id: "2", titleEn: "Pure Landscape", titleRo: "Orizont Simplu", categoryRo: "Natură", categoryEn: "NATURE", location: "OUTDOOR", src: "/peisaj-simplu.webp" },
+  { id: "3", titleEn: "Urban Cadre", titleRo: "Cadru Urban", categoryRo: "Portrete", categoryEn: "PORTRAIT", location: "NATURE", src: "/cadru-urban.webp" },
+  { id: "4", titleEn: "Forest Waterfall", titleRo: "Cascadă în Pădure", categoryRo: "Natură", categoryEn: "NATURE", location: "NATURĂ", src: "/cascada-padure.webp" },
+  { id: "5", titleEn: "Leaf Texture Macro", titleRo: "Textură Frunză (Macro)", categoryRo: "Natură", categoryEn: "NATURE", location: "NATURĂ", src: "/frunza-macro.webp" },
+  { id: "6", titleEn: "Pine Needle Macro", titleRo: "Micuțul Brad (Macro)", categoryRo: "Natură", categoryEn: "NATURE", location: "OUTDOOR", src: "/brad-macro.webp" },
+  { id: "7", titleEn: "Golden Hour Field", titleRo: "Câmp la Golden Hour", categoryRo: "Natură", categoryEn: "NATURE", location: "URBAN", src: "/camp-golden-hour.webp" },
+  { id: "8", titleEn: "Church Tower", titleRo: "Turnul Bisericii", categoryRo: "Natură", categoryEn: "NATURE", location: "OUTDOOR", src: "/turn-biserica.webp" },
+  { id: "9", titleEn: "Golden Sunset", titleRo: "Apus Auriu", categoryRo: "Natură", categoryEn: "NATURE", location: "OUTDOOR", src: "/sunset-golden.webp" },
 ];
 
 export default function Home() {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   return (
-    <main className="min-h-screen bg-neutral-950 text-neutral-100 p-6 md:p-12">
+    <main style={{ minHeight: "100vh", backgroundColor: "#ffffff", color: "#171717", fontFamily: "sans-serif" }}>
       {/* Header */}
-      <header className="max-w-7xl mx-auto mb-12 flex justify-between items-center border-b border-neutral-800 pb-6">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">Alexandru</h1>
-          <p className="text-neutral-400 text-sm mt-1">Photography Portfolio</p>
+      <header style={{ borderBottom: "1px solid #e5e5e5", backgroundColor: "#ffffff", position: "sticky", top: 0, zIndex: 40, padding: "20px 24px" }}>
+        <div style={{ maxWidth: "1400px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <h1 style={{ fontSize: "24px", fontWeight: "bold", margin: 0, letterSpacing: "-0.5px" }}>
+            AXL <span style={{ color: "#a3a3a3", fontWeight: "300" }}>VISUAL STUDIO</span>
+          </h1>
+          <nav style={{ display: "flex", gap: "24px", fontSize: "14px", fontWeight: "500", alignItems: "center" }}>
+            <span style={{ color: "#171717", cursor: "pointer" }}>Portofoliu</span>
+            <span style={{ color: "#737373", cursor: "pointer" }}>Servicii</span>
+            <span style={{ color: "#737373", cursor: "pointer" }}>Contact</span>
+            <div style={{ paddingLeft: "16px", borderLeft: "1px solid #e5e5e5", display: "flex", gap: "6px" }}>
+              <span style={{ fontWeight: "bold" }}>RO</span>
+              <span style={{ color: "#d4d4d4" }}>|</span>
+              <span style={{ color: "#737373" }}>ENG</span>
+            </div>
+          </nav>
         </div>
       </header>
 
-      {/* Photo Grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {photos.map((photo) => (
-          <div
-            key={photo.id}
-            onClick={() => setSelectedPhoto(photo)}
-            className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-neutral-900 cursor-pointer border border-neutral-800/50 hover:border-neutral-700 transition-all duration-300"
-          >
-            <Image
-              src={photo.src}
-              alt={photo.titleEn}
-              fill
-              placeholder="blur"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-              <span className="text-sm font-medium text-white">{photo.titleRo}</span>
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Categorii */}
+      <section style={{ backgroundColor: "#f5f5f5", borderBottom: "1px solid #e5e5e5", padding: "16px 24px" }}>
+        <div style={{ maxWidth: "1400px", margin: "0 auto", display: "flex", justifyContent: "center", gap: "8px" }}>
+          <button style={{ backgroundColor: "#ffffff", border: "1px solid #d4d4d4", borderRadius: "9999px", padding: "8px 20px", fontWeight: "600", fontSize: "14px", cursor: "pointer" }}>Toate</button>
+          <button style={{ backgroundColor: "transparent", border: "none", borderRadius: "9999px", padding: "8px 20px", color: "#737373", fontSize: "14px", cursor: "pointer" }}>Portrete</button>
+          <button style={{ backgroundColor: "transparent", border: "none", borderRadius: "9999px", padding: "8px 20px", color: "#737373", fontSize: "14px", cursor: "pointer" }}>Natură</button>
+        </div>
+      </section>
 
-      {/* Lightbox / Modal */}
+      {/* Galerie Foto */}
+      <section style={{ maxWidth: "1400px", margin: "0 auto", padding: "48px 24px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))", gap: "32px" }}>
+          {photosData.map((photo) => (
+            <div
+              key={photo.id}
+              onClick={() => setSelectedPhoto(photo)}
+              style={{
+                backgroundColor: "#ffffff",
+                borderRadius: "24px",
+                overflow: "hidden",
+                border: "1px solid #f5f5f5",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+                cursor: "pointer",
+                display: "flex",
+                flexDirection: "column"
+              }}
+            >
+              <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", backgroundColor: "#e5e5e5" }}>
+                <Image
+                  src={photo.src}
+                  alt={photo.titleEn}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                  unoptimized
+                />
+              </div>
+
+              <div style={{ padding: "24px", display: "flex", flexDirection: "column", gap: "16px", flexGrow: 1, justifyContent: "space-between" }}>
+                <div>
+                  <h3 style={{ margin: 0, fontSize: "20px", fontWeight: "600", color: "#0a0a0a" }}>{photo.titleRo}</h3>
+                  <p style={{ margin: "4px 0 0 0", fontSize: "14px", color: "#737373" }}>{photo.titleEn}</p>
+                </div>
+
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #f5f5f5", paddingTop: "16px" }}>
+                  <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+                    <span style={{ fontSize: "11px", fontWeight: "bold", color: "#a3a3a3", textTransform: "uppercase" }}>{photo.categoryEn}</span>
+                    <span style={{ fontSize: "13px", color: "#404040", fontWeight: "500" }}>{photo.categoryRo}</span>
+                  </div>
+                  <span style={{ fontSize: "11px", fontWeight: "500", color: "#a3a3a3", textTransform: "uppercase" }}>{photo.location}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Modal / Lightbox */}
       {selectedPhoto && (
         <div
           onClick={() => setSelectedPhoto(null)}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 cursor-pointer"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 50,
+            backgroundColor: "rgba(0,0,0,0.9)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "20px",
+            cursor: "pointer"
+          }}
         >
-          <div className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center">
-            <Image
-              src={selectedPhoto.src}
-              alt={selectedPhoto.titleEn}
-              placeholder="blur"
-              className="object-contain max-h-[85vh] w-auto rounded-lg shadow-2xl"
-            />
+          <div style={{ position: "relative", maxWidth: "1000px", maxHeight: "80vh", width: "100%", height: "100%", display: "flex", flexDirection: "column", itemsCenter: "center" }}>
+            <div style={{ position: "relative", width: "100%", height: "100%" }}>
+              <Image
+                src={selectedPhoto.src}
+                alt={selectedPhoto.titleEn}
+                fill
+                style={{ objectFit: "contain" }}
+                unoptimized
+              />
+            </div>
+            <div style={{ textAlign: "center", marginTop: "16px", color: "#ffffff" }}>
+              <h2 style={{ margin: 0, fontSize: "20px" }}>{selectedPhoto.titleRo}</h2>
+            </div>
           </div>
         </div>
       )}
