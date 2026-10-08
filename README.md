@@ -1,19 +1,24 @@
-# Personal Web Project 
+# Project Name
 
-Welcome! This is my presentation website.
+A short description of what your project does and who it's for.
 
-## Gallery
+## Demo / Preview
 
-![Rustic landscape portrait](images/portret-cu-peisaj.jpg)
+![Project Preview](images/portret-cu-peisaj.jpg)
 
-## Built With
+##  Built With
 
 * HTML5
 * CSS3
-(oh boy a lot of pain😭)
+* JavaScript
 
-## Project Structure
+## 🤖 AI Usage Disclosure
 
-* `index.html` - Main page
-* `images/` - Image assets folder
-* `README.md` - Project documentation
+* I used AI (Gemini) as an assistant for debugging code, structuring file organization, and writing documentation/README text.
+* All design choices, assets, and project ideas are my own.
+
+## 📁 Repository Structure
+
+* `index.html` - Main landing page
+* `images/` - Assets and image files
+* `README.md` - Documentation
