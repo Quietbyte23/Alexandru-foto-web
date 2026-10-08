@@ -13,15 +13,15 @@ interface Photo {
 }
 
 const photosData: Photo[] = [
-  { id: "1", titleEn: "Church Tower", titleRo: "Turnul Bisericii", categoryRo: "Arhitectură", categoryEn: "ARCHITECTURE", location: "URBAN", src: "/portret-natura.webp" },
+  { id: "1", titleEn: "Church Tower", titleRo: "Turnul Bisericii", categoryRo: "Arhitectură", categoryEn: "ARCHITECTURE", location: "URBAN", src: "/turn-biserica.webp" },
   { id: "2", titleEn: "Natural Portrait", titleRo: "Portret în Natură", categoryRo: "Portrete", categoryEn: "PORTRAIT", location: "NATURĂ", src: "/portret-natura.webp" },
   { id: "3", titleEn: "Pure Landscape", titleRo: "Orizont Simplu", categoryRo: "Natură", categoryEn: "NATURE", location: "OUTDOOR", src: "/peisaj-simplu.webp" },
-  { id: "4", titleEn: "Forest Waterfall", titleRo: "Cascadă în Pădure", categoryRo: "Natură", categoryEn: "NATURE", location: "NATURĂ", src: "/IMG_7078.jpeg" },
-  { id: "5", titleEn: "Leaf Texture Macro", titleRo: "Textură Frunză (Macro)", categoryRo: "Natură", categoryEn: "NATURE", location: "NATURĂ", src: "/IMG_7079.jpeg" },
-  { id: "6", titleEn: "Pine Needle Macro", titleRo: "Micuțul Brad (Macro)", categoryRo: "Natură", categoryEn: "NATURE", location: "OUTDOOR", src: "/IMG_7125.jpeg" },
+  { id: "4", titleEn: "Forest Waterfall", titleRo: "Cascadă în Pădure", categoryRo: "Natură", categoryEn: "NATURE", location: "NATURĂ", src: "/cascada-padure.webp" },
+  { id: "5", titleEn: "Leaf Texture Macro", titleRo: "Textură Frunză (Macro)", categoryRo: "Natură", categoryEn: "NATURE", location: "NATURĂ", src: "/frunza-micro.webp" },
+  { id: "6", titleEn: "Pine Needle Macro", titleRo: "Micuțul Brad (Macro)", categoryRo: "Natură", categoryEn: "NATURE", location: "OUTDOOR", src: "/" },
   { id: "7", titleEn: "Golden Hour Field", titleRo: "Câmp la Golden Hour", categoryRo: "Natură", categoryEn: "NATURE", location: "URBAN", src: "/977d2346-ba8e-45f2-aca2-e5bea8a6bc63.jpeg" },
   { id: "8", titleEn: "Photo Capture", titleRo: "Fotografie Captură", categoryRo: "Portrete", categoryEn: "PORTRAIT", location: "OUTDOOR", src: "/IMG_7263.jpeg" },
-  { id: "9", titleEn: "Landscape View", titleRo: "Vedere Peisaj", categoryRo: "Natură", categoryEn: "NATURE", location: "OUTDOOR", src: "/IMG_3514.jpeg" },
+  { id: "9", titleEn: "Landscape View", titleRo: "Vedere Peisaj", categoryRo: "Natură", categoryEn: "NATURE", location: "OUTDOOR", src: "/portret-natura.webp" },
 ];
 
 export default function Home() {
